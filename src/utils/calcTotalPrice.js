@@ -1,3 +1,4 @@
 export const calcTotalPrice = orders => {
-   return orders.reduce((acc, order) => (acc += +order.price), 0)
+   let summ = orders.reduce((acc, order) => (acc += +order.price), 0)
+   return Number(summ).toFixed(2)
 }

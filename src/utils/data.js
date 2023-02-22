@@ -12,6 +12,7 @@ export const items = [
       desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veritatis',
       category: 'chairs',
       price: '49.99',
+      count: 1,
    },
    {
       id: 2,
@@ -20,6 +21,7 @@ export const items = [
       desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veritatis',
       category: 'tables',
       price: '129.99',
+      count: 1,
    },
    {
       id: 3,
@@ -28,6 +30,7 @@ export const items = [
       desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veritatis',
       category: 'sofa',
       price: '549.99',
+      count: 1,
    },
    {
       id: 4,

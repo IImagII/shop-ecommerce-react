@@ -40,11 +40,7 @@ export const Header = () => {
          </div>
          <div className='order-page__right'>
             <div className='order-page__total-price'>
-               {orders.length > 0 && (
-                  <span>
-                     {orders.length} шт. {calcTotalPrice(orders)} грн.
-                  </span>
-               )}
+               {orders.length > 0 && <span>{orders.length} шт. 6 грн.</span>}
             </div>
          </div>
          <div className='presentation'>

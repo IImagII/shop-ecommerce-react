@@ -4,6 +4,7 @@ export const ShowFullItem = ({
    showFullItems,
    currentItemId,
    setShowFullItems,
+   addToOrders,
 }) => {
    const { img, desc, title, price } = currentItemId
 
@@ -30,11 +31,13 @@ export const ShowFullItem = ({
                <h2>{title}</h2>
                <p>{desc}</p>
                <b>{price} ₴</b>
-               <div className='add-to-cart' onClick={() => addToOrders(item)}>
+               <div
+                  className='add-to-cart'
+                  onClick={() => addToOrders(currentItemId)}
+               >
                   +
                </div>
-            </div>{' '}
-            */
+            </div>
          </div>
       </div>
    )

@@ -1,7 +1,16 @@
 import React from 'react'
+import { ItemBuy } from './ItemBuy'
 
 export const Item = ({ ...item }) => {
-   const { img, title, price, desc, addToOrders, handleShowItenId } = item
+   const {
+      img,
+      title,
+      price,
+      desc,
+      addToOrders,
+      handleShowItenId,
+      isOrdersCart,
+   } = item
 
    return (
       <div className='item'>
@@ -9,9 +18,7 @@ export const Item = ({ ...item }) => {
          <h2>{title}</h2>
          <p>{desc}</p>
          <b>{price} ₴</b>
-         <div className='add-to-cart' onClick={() => addToOrders(item)}>
-            +
-         </div>
+         <ItemBuy addToOrders={addToOrders} item={item} />
       </div>
    )
 }
