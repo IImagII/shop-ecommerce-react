@@ -6,24 +6,21 @@ import { Item } from './components/Item'
 import { OrdersContext } from './hooks/OrdersProvider'
 import { Categories } from './components/Categories'
 import { ShowFullItem } from './components/ShowFullItem'
+import { ItemBuy } from './components/ItemBuy'
 
 function App() {
    const { orders, setOrders } = useContext(OrdersContext) // для добавления товаров в корзину
    const [currentItem, setCurrentItem] = useState(items) // сосотояние для управления категориями, vs c.lf pfgbitv yfib yfxfkmyst cjcnjybz
    const [showFullItems, setShowFullItems] = useState(false) // состояние для показа модального окна с индивидуальным товаром
    const [currentItemId, setCurrentItemId] = useState({}) // это состояние которое содержит всю инфу по индивидуальному товару
-   const [showOrders, setShowOrders] = useState(false)
 
    //функция для добавления товаров корзину
    const addToOrders = item => {
       const isOrdersCartId = orders.some(el => el.id === item.id)
-
       if (isOrdersCartId) {
          setOrders(orders.filter(order => order.id !== item.id))
-         setShowOrders(true)
       } else {
          setOrders([...orders, item])
-         setShowOrders(false)
       }
    }
 

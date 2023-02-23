@@ -2,7 +2,7 @@ import React from 'react'
 import { ItemBuy } from './ItemBuy'
 
 export const Item = ({ ...item }) => {
-   const { img, title, price, desc, addToOrders } = item
+   const { id, img, title, price, desc, addToOrders, showOrders } = item
 
    return (
       <div className='item'>
@@ -10,7 +10,11 @@ export const Item = ({ ...item }) => {
          <h2>{title}</h2>
          <p>{desc}</p>
          <b>{price} ₴</b>
-         <ItemBuy addToOrders={addToOrders} item={item} />
+         <ItemBuy
+            addToOrders={addToOrders}
+            item={item}
+            showOrders={showOrders}
+         />
       </div>
    )
 }
