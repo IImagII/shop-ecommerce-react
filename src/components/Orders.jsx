@@ -14,8 +14,8 @@ export const Orders = ({ ...order }) => {
       setOrders(orders.filter(order => order.id !== id))
    }
 
-   //функция добавления большегоколичества товаров
-   const handleIncreseOrder = id => {
+   //функция добавления большего количества товаров
+   const handleIncreaseOrder = id => {
       setOrders(orders => {
          return orders.map(order => {
             if (order.id === id) {
@@ -28,6 +28,22 @@ export const Orders = ({ ...order }) => {
          })
       })
    }
+
+   //функция уменьшения количетсва в корзине
+   const handleDecreaseOrder = id => {
+      setOrders(orders => {
+         return orders.map(order => {
+            if (order.id === id) {
+               return {
+                  ...order,
+                  count: order.count - 1 > 1 ? --order.count : 1,
+               }
+            }
+            return order
+         })
+      })
+   }
+
    return (
       <>
          <div className='cart'>
@@ -43,9 +59,11 @@ export const Orders = ({ ...order }) => {
             <div className='cart__count'>кол. {count}</div>
             <div className='cart__arrow'>
                <BsFillArrowUpSquareFill
-                  onClick={() => handleIncreseOrder(id)}
+                  onClick={() => handleIncreaseOrder(id)}
                />
-               <BsFillArrowDownSquareFill />
+               <BsFillArrowDownSquareFill
+                  onClick={() => handleDecreaseOrder(id)}
+               />
             </div>
             <div className='cart__delete' onClick={() => handleRemoveOrder(id)}>
                удалить
