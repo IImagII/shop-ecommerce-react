@@ -2,15 +2,7 @@ import React from 'react'
 import { ItemBuy } from './ItemBuy'
 
 export const Item = ({ ...item }) => {
-   const {
-      img,
-      title,
-      price,
-      desc,
-      addToOrders,
-      handleShowItenId,
-      isOrdersCart,
-   } = item
+   const { img, title, price, desc, addToOrders } = item
 
    return (
       <div className='item'>

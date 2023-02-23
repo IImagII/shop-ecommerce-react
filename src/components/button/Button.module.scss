@@ -1,0 +1,24 @@
+.btn {
+   position: absolute;
+   right: 1.25rem;
+   bottom: 0.7rem;
+   width: 2.1875rem;
+   height: 2.1875rem;
+   text-align: center;
+   font-size: 1.2rem;
+   color: #f8f1f1;
+   line-height: 2.1875rem; // для того чтобы находился по центру наш текст
+   border-radius: 20%;
+   cursor: pointer;
+   font-weight: 600;
+   transition: transform 500ms ease;
+   &:hover {
+      transform: scale(1.05) translateY(-3px);
+   }
+}
+.btn--primary {
+   background-color: #ca5252;
+}
+.btn--danger {
+   background-color: rgb(85, 88, 237);
+}
