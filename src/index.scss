@@ -179,7 +179,7 @@ header {
    position: absolute;
    top: 3.875rem;
    right: 40px;
-   width: 30.125rem;
+   max-width: 30.125rem;
    background: #fafafa;
    z-index: 2;
    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.32); //взяли из генератора
@@ -383,5 +383,13 @@ header {
    }
    .touch {
       left: 0; //для того чтобы меню уежало
+   }
+   .shop-cart-icon {
+      right: -9.375rem;
+   }
+   .order-page {
+      &__right {
+         right: 5rem;
+      }
    }
 }
