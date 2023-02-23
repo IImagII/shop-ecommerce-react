@@ -18,10 +18,10 @@ export const Header = () => {
          <div className='header'>
             <div className='header__logo'>House Staff</div>
 
-            {/* <IoMdBasket
+            <IoMdBasket
                onClick={() => setCartOpen(cartOpen => !cartOpen)}
                className={`shop-cart-icon ${cartOpen && 'active'}`}
-            /> */}
+            />
 
             <ul className={`nav ${touch && 'touch'}`}>
                <li>Про нас</li>
@@ -44,14 +44,14 @@ export const Header = () => {
                </div>
             )}
          </div>
-         {/* <div className='order-page__right'>
+         <div className='order-page__right'>
             <div className='order-page__total-price'>
                {orders.length > 0 && <span>{orders.length} шт. 6 грн.</span>}
             </div>
          </div>
          <div className='presentation'>
             <img src='@img' alt='' />
-         </div> */}
+         </div>
       </header>
    )
 }

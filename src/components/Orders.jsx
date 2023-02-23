@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
-import { calcTotalPrice } from '../utils/calcTotalPrice.js'
+
 import { OrdersContext } from '../hooks/OrdersProvider'
+import {
+   BsFillArrowUpSquareFill,
+   BsFillArrowDownSquareFill,
+} from 'react-icons/bs'
 
 export const Orders = ({ ...order }) => {
    const { id, img, title, price } = order
@@ -14,15 +18,19 @@ export const Orders = ({ ...order }) => {
       <>
          <div className='cart'>
             <div className='cart__items'>
+               <h2>{title}</h2>
                <div>
                   <img src={img} alt='title' />
                </div>
                <div>
-                  <h2>{title}</h2>
-                  <b>{price} гривен</b>
+                  <b>Цена: {price} гривен</b>
                </div>
             </div>
-
+            <div className='cart__count'>кол. 1</div>
+            <div className='cart__arrow'>
+               <BsFillArrowUpSquareFill />
+               <BsFillArrowDownSquareFill />
+            </div>
             <div className='cart__delete' onClick={() => handleRemoveOrder(id)}>
                удалить
             </div>

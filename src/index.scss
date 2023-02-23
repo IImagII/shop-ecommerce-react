@@ -158,8 +158,8 @@ main {
    margin-right: 17.75rem;
    font-size: 1.4625rem;
    position: absolute;
-   top: 30;
-   right: 0;
+   top: 30px;
+   right: 50px;
    &:hover {
       color: #dc3d3d;
       transform: scale(1.2);
@@ -173,33 +173,22 @@ main {
 header {
    position: relative;
 }
+
 //стили для блока который появляеся при нажатии на иконку корзины
 .shop-cart {
    position: absolute;
-   top: 1.875rem;
-   right: 0;
-   width: 28.125rem;
-   background: #fafafa;
-   min-height: 60px; // это только чтобы ее сейчас увидетьь
-   z-index: 2;
-   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.32); //взяли из генератора
-}
-//стили для блока который появляеся при нажатии на иконку корзины
-.shop-cart {
-   position: absolute;
-   top: 1.875rem;
-   right: 0;
-   width: 35.125rem;
+   top: 3.875rem;
+   right: 40px;
+   width: 30.125rem;
    background: #fafafa;
    z-index: 2;
    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.32); //взяли из генератора
    padding: 1.25rem;
-   padding-bottom: 0;
 }
 .order-page {
    &__right {
-      top: 1.25rem;
-      right: 12.5rem;
+      top: 3.25rem;
+      right: 18rem;
       position: absolute;
       margin: 0.625rem;
    }
@@ -234,7 +223,6 @@ header {
 /*===============Корзина стили=================*/
 .cart {
    width: 100%;
-   float: left;
    margin-bottom: 1.25rem;
    display: flex;
    justify-content: space-between;
@@ -245,6 +233,18 @@ header {
    &__item {
       display: flex;
       align-items: center;
+   }
+   &__count {
+      margin-top: 40px;
+   }
+   &__arrow {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 22px;
+      color: rgb(54, 54, 163);
+      margin-top: 20px;
+      margin-right: 40px;
    }
    img {
       width: 4.375rem;
