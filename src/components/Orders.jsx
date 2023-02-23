@@ -53,7 +53,7 @@ export const Orders = ({ ...order }) => {
                   <img src={img} alt='title' />
                </div>
                <div>
-                  <b>Стоимость: {price * count} гривен</b>
+                  <b>Стоимость: {+price * +count} гривен</b>
                </div>
             </div>
             <div className='cart__count'>кол. {count}</div>
