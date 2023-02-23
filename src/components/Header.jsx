@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { IoMdBasket } from 'react-icons/io'
 import { Orders } from './Orders'
 import { EmptyCart } from './EmptyCart'
@@ -12,6 +12,38 @@ export const Header = () => {
    const [cartOpen, setCartOpen] = useState(false)
    const { orders } = useContext(OrdersContext) // берем из контекста
    const [touch, setTouch] = useState(false) //состояние для показа гамбурегр меню
+
+   //Состояние для изменения общей стоимости и количества корзины
+   const [total, setTotal] = useState({
+      totalPrice: new Intl.NumberFormat().format(
+         orders.reduce((sum, order) => {
+            return sum + +order.price
+         }, 0)
+      ),
+
+      totalCount: new Intl.NumberFormat().format(
+         orders.reduce((sum, order) => {
+            return sum + +order.count
+         }, 0)
+      ),
+   })
+
+   //Длл изменения подсчета общего количестваи стоимости в корзине при изменении orders
+   useEffect(() => {
+      setTotal({
+         totalPrice: new Intl.NumberFormat().format(
+            orders.reduce((sum, order) => {
+               return sum + +order.price * +order.count
+            }, 0)
+         ),
+
+         totalCount: new Intl.NumberFormat().format(
+            orders.reduce((sum, order) => {
+               return sum + +order.count
+            }, 0)
+         ),
+      })
+   }, [orders])
 
    return (
       <header>
@@ -37,7 +69,7 @@ export const Header = () => {
             {cartOpen && (
                <div className='shop-cart'>
                   {orders.length > 0 ? (
-                     <OrderShow orders={orders} />
+                     <OrderShow orders={orders} total={total} />
                   ) : (
                      <EmptyCart />
                   )}
@@ -46,7 +78,11 @@ export const Header = () => {
          </div>
          <div className='order-page__right'>
             <div className='order-page__total-price'>
-               {orders.length > 0 && <span>{orders.length} шт. 6 грн.</span>}
+               {orders.length > 0 && (
+                  <span>
+                     {total.totalCount} шт. {total.totalPrice} грн.
+                  </span>
+               )}
             </div>
          </div>
          <div className='presentation'>
